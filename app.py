@@ -39,7 +39,8 @@ app.layout = html.Div([
                 min=0,
                 max=100,
                 step=1,
-                value=10
+                value=10,
+                marks={}
             ),
             daq.BooleanSwitch(
                 id='use-vol-weight',
@@ -57,13 +58,15 @@ app.layout = html.Div([
                 min=1,
                 max=30,
                 step=1,
-                value=2
+                value=2,
+                marks={}
             ),
             
             html.Div(id='target-vol-display'),
             dcc.Slider(
                 id='target-vol',
                 className='slid',
+                marks={},
                 min=1,
                 max=100,
                 step=1,
@@ -77,7 +80,8 @@ app.layout = html.Div([
                 min=1,
                 max=24,
                 step=1,
-                value=6
+                value=6,
+                marks={}
             )
         ], style={'width': '49%', 'float': 'right', 'display': 'inline-block'})
     ], style={

@@ -149,7 +149,7 @@ def portfolio_stats(price, weights, add_rf=False, fee_rate=0.001):
         'turnover_annual': turnover.rolling(12).sum(),
         'leverage': portfolio.leverage,
         'drawdown': nav.drawdown,
-        'asset_class_weights': portfolio.weights.sum(level=0, axis=1),
+        'asset_class_weights': portfolio.weights.T.groupby(level=0).sum(),
         'ewm_volatility': nav.ewm_volatility(),
         'summary': summary,
         'nav': nav
